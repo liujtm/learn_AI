@@ -35,13 +35,14 @@ model.eval()
 with torch.no_grad():
     encoded_layers, _ = model(tokens_tensor, segments_tensors)
 
-print("Number of layers:", len(encoded_layers))
+
+print("Number of layers:", len(encoded_layers))  # 12层
 layer_i = 0
-print("Number of batches:", len(encoded_layers[layer_i]))
+print("Number of batches:", len(encoded_layers[layer_i]))  # 1
 batch_i = 0
-print("Number of tokens:", len(encoded_layers[layer_i][batch_i]))
+print("Number of tokens:", len(encoded_layers[layer_i][batch_i]))  # 22个词
 token_i = 0
-print("Number of hidden units:", len(encoded_layers[layer_i][batch_i][token_i]))
+print("Number of hidden units:", len(encoded_layers[layer_i][batch_i][token_i]))  # 768
 
 # Will have the shape: [# tokens, # layers, # features]
 token_embeddings = []
